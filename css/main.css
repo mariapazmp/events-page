@@ -5,6 +5,7 @@
 /* Normalizing styles*/
 
 html, body {
+  color: var(--text-color);
   margin: 0;
   height: 100%;
   -webkit-text-size-adjust: 100%;
@@ -48,6 +49,12 @@ button {
   border: 2px var(--secondary-color) solid;
 }
 
+.tertiary-button {
+  border: 1px var(--border-color-secondary) solid;
+  background: none;
+  color: var(--border-color-secondary);
+}
+
 main {
   display: block;
 }
@@ -66,6 +73,7 @@ i.fas {
   --secondary-color: #ef5c11;
   --tertiary-color: #21aaeb;
   --border-color: #b8c3cc;
+  --border-color-secondary: #454d53;
 
   --text-color: #292e33;
   --text-color-active: #023754;
@@ -374,8 +382,40 @@ h1 strong, .starred-event:first-child strong {
 
 .event-details__options {
   background: var(--background-color);
-  border-radius: 2rem;
-  padding: 3rem 1rem;
+  border-radius: 0.5rem;
+  padding: 3rem 2rem 1.5rem;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 2rem;
+}
+
+.event-details__options .event-details__date {
+  display: flex;
+}
+
+.event-details__date i {
+  font-size: 2rem;
+  margin-right: 1rem;
+}
+
+.event-details__event-type {
+  color: var(--text-color-active);
+  font-family: "Playfair Display", serif;
+  padding: 1rem 0 0;
+}
+
+.event-details__location {
+  color: var(--text-color-active);
+  display: block;
+  padding: 1rem 0;
+}
+
+.event-details__body button {
+  padding: 0.8rem 1rem;
+}
+
+.event-details__body .primary-button {
+  float: right;
 }
 
 /* ==========================================================================
@@ -394,31 +434,6 @@ h1 strong, .starred-event:first-child strong {
    Base styles: opinionated defaults
    ========================================================================== */
 
-html {
-  color: #222;
-  font-size: 1em;
-  line-height: 1.4;
-}
-
-/*
- * A better looking default horizontal rule
- */
-
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
-}
-
-/*
- * Remove the gap between audio, canvas, iframes,
- * images, videos and the bottom of their containers:
- * https://github.com/h5bp/html5-boilerplate/issues/440
- */
-
 audio,
 canvas,
 iframe,
@@ -436,42 +451,8 @@ video {
   display: none !important;
 }
 
-/*
-* Hide visually and from screen readers, but maintain layout
-*/
-
-.invisible {
-  visibility: hidden;
-}
-
-/*
-* Clearfix: contain floats
-*
-* For modern browsers
-* 1. The space content is one way to avoid an Opera bug when the
-*    `contenteditable` attribute is included anywhere else in the document.
-*    Otherwise it causes space to appear at the top and bottom of elements
-*    that receive the `clearfix` class.
-* 2. The use of `table` rather than `block` is only necessary if using
-*    `:before` to contain the top-margins of child elements.
-*/
-
-.clearfix:before,
-.clearfix:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */
-}
-
-.clearfix:after {
-  clear: both;
-}
-
 /* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
+   Media Queries for Responsive Design.
    ========================================================================== */
 
 @media only screen and (min-width: 35em) {

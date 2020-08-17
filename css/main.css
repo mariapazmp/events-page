@@ -36,6 +36,18 @@ button {
   text-transform: uppercase;
 }
 
+.primary-button {
+  background: var(--secondary-color);
+  color: var(--white-background);
+  padding: 0.4rem 1.5rem;
+}
+
+.primary-button--checked {
+  color: var(--secondary-color);
+  background: none;
+  border: 2px var(--secondary-color) solid;
+}
+
 main {
   display: block;
 }
@@ -94,7 +106,7 @@ h1 {
 }
 
 h2 {
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 h3 {
@@ -327,37 +339,56 @@ h1 strong, .starred-event:first-child strong {
   color: var(--secondary-color);
 }
 
-.regular-events .primary-button {
-  background: var(--secondary-color);
-  color: var(--white-background);
-  padding: 0.4rem 1.5rem;
-}
-
-.regular-events .primary-button--checked {
-  color: var(--secondary-color);
-  background: none;
-  border: 2px var(--secondary-color) solid;
-}
-
-
-
-
-
-
-
-
-
-
-
 /* ==========================================================================
    Event Details Page
    ========================================================================== */
 
-#event-details, .confirmation-modal, .warning-modal {
+.event-details__title {
+  color: var(--text-color-active);
+}
+
+.event-details__date, .event-details button {
+  display: inline-block;
+}
+
+.event-details__date {
+  margin-right: 1.5rem;
+}
+
+.event-details__body {
+  padding: 2rem 0;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 70% 30%;
+}
+
+.event-details__featured-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.event-details__article-body {
+  padding-top: 2rem;
+}
+
+.event-details__options {
+  background: var(--background-color);
+  border-radius: 2rem;
+  padding: 3rem 1rem;
+}
+
+/* ==========================================================================
+   Page States
+   ========================================================================== */
+
+#events-list {
   display: none;
 }
 
-
+.confirmation-modal, .warning-modal {
+  display: none;
+}
 
 /* ==========================================================================
    Base styles: opinionated defaults

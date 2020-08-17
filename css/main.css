@@ -1,12 +1,285 @@
+/* ==========================================================================
+   Global styles: header, footer and common elements
+   ========================================================================== */
 
+/* Normalizing styles*/
 
+html, body {
+  margin: 0;
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+}
 
+html {
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+}
 
+a {
+  color: var(--text-color);
+  text-decoration: none;
+}
 
+b,
+strong {
+  font-weight: bolder;
+}
 
+button {
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  padding: 0.8rem 1rem;
+  font-family: inherit;
+  line-height: 1.15;
+  margin: 0;
+  text-transform: uppercase;
+}
 
+main {
+  display: block;
+}
 
+a {
+  background-color: transparent;
+}
 
+i.fas {
+  margin-right: 0.3rem;
+}
+
+/* Global styles */
+
+:root {
+  --secondary-color: #ef5c11;
+  --tertiary-color: #21aaeb;
+  --border-color: #b8c3cc;
+
+  --text-color: #292e33;
+  --text-color-active: #023754;
+
+  --background-color: #dae0e6;
+  --secondary-background-color: #463eb4;
+  --white-background: #ffffff;
+
+  --success-color: #41b809;
+  --warning-color: #fcab10;
+}
+
+.main-container {
+  width: 1140px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1140px) {
+  .main-container {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.even-container {
+  background: var(--background-color);
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  line-height: 1.15;
+}
+
+h1 {
+  font-size: 3.3rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+header {
+  border-bottom: 1px var(--border-color) solid;
+  padding: 0.7rem 0;
+}
+
+header .main-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__options {
+  display: flex;
+}
+
+.header__user-account {
+}
+
+.header__user-account img {
+  border-radius: 24px;
+  width: 48px;
+}
+
+nav {
+  padding: 0 1.5rem;
+}
+
+nav a {
+  display: inline-block;
+  padding: 1.2rem 0.5rem 1rem;
+}
+
+nav .active {
+  color: var(--tertiary-color);
+  font-weight: bold;
+}
+
+footer {
+  background: var(--text-color);
+  color: var(--background-color);
+  font-weight: 200;
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+/* ==========================================================================
+   Event Page's styles
+   ========================================================================== */
+
+.hero-banner {
+  padding: 1rem 0 4rem;
+}
+
+.hero-banner .main-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.hero-banner h1 {
+  color: var(--text-color-active);
+  margin-top: 4rem;
+  line-height: 0.9;
+}
+
+h1 strong, .starred-event:first-child strong {
+  color: var(--tertiary-color);
+  font-weight: normal;
+}
+
+.starred-events {
+  padding-bottom: 3rem;
+}
+
+.starred-events .main-container {
+  display: grid;
+  gap: 1rem 2rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "starred starred"
+    "secondary secondary";
+}
+
+.starred-event__media > * {
+  margin: 12% 0;
+}
+
+.starred-event .starred-event__media {
+  display: none;
+}
+
+.starred-event:first-child .starred-event__media {
+  display: block;
+}
+
+.starred-event:first-child {
+  background: linear-gradient(90deg, transparent 40%, var(--secondary-background-color) 0);
+  display: flex;
+  grid-area: starred;
+  padding: 0;
+  position: relative;
+  top: -2rem;
+}
+
+.starred-event:first-child .starred-event__info {
+  box-sizing: border-box;
+  color: var(--background-color);
+  padding: 3rem;
+}
+
+.starred-event__location {
+   float: right;
+   color: var(--secondary-color);
+ }
+
+.starred-event:first-child .starred-event__location {
+  color: var(--tertiary-color);
+}
+
+.starred-event:first-child .starred-event__attendees {
+  display: none;
+}
+
+.starred-event__options {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 0;
+}
+
+.starred-event:first-child .starred-event__options {
+  justify-content: flex-end;
+}
+
+.starred-event__options button {
+  margin-left: 0.8rem;
+}
+
+.starred-event {
+  background: var(--white-background);
+  padding: 2rem;
+}
+
+.starred-event:first-child .primary-button {
+  display: block;
+}
+
+.starred-event .primary-button {
+  color: var(--secondary-background-color);
+  display: none;
+}
+
+.starred-event .secondary-button {
+  color: var(--white-background);
+  background: var(--secondary-color);
+}
+
+.starred-event:first-child .secondary-button {
+  background: none;
+}
+
+.starred-event__date, .starred-event__attendees {
+  font-weight: 500;
+}
+
+.starred-event strong {
+  color: var(--secondary-color);
+}
+
+.regular-events {
+  padding: 2rem 0;
+}
+
+.regular-events .main-container {
+  display: grid;
+  grid-template: auto / 1fr 1fr 1fr;
+  gap: 2rem;
+}
+
+.regular-events .event {
+  flex: 1 1 0;
+  padding: 1.5rem;
+}
 
 
 
@@ -19,6 +292,16 @@
 
 
 /* ==========================================================================
+   Event Details Page
+   ========================================================================== */
+
+#event-details, .confirmation-modal, .warning-modal {
+  display: none;
+}
+
+
+
+/* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
 
@@ -26,26 +309,6 @@ html {
   color: #222;
   font-size: 1em;
   line-height: 1.4;
-}
-
-/*
- * Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
- *
- * Vendor-prefixed and regular ::selection selectors cannot be combined:
- * https://stackoverflow.com/a/16982510/7133471
- *
- * Customize the background color to match your design.
- */
-
-::-moz-selection {
-  background: #b3d4fc;
-  text-shadow: none;
-}
-
-::selection {
-  background: #b3d4fc;
-  text-shadow: none;
 }
 
 /*
@@ -77,72 +340,11 @@ video {
 }
 
 /*
- * Remove default fieldset styles.
- */
-
-fieldset {
-  border: 0;
-  margin: 0;
-  padding: 0;
-}
-
-
-/* ==========================================================================
-   Browser Upgrade Prompt
-   ========================================================================== */
-
-.browserupgrade {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
-}
-
-/*
  * Hide visually and from screen readers
  */
 
 .hidden {
   display: none !important;
-}
-
-/*
-* Hide only visually, but have it available for screen readers:
-* https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
-*
-* 1. For long content, line feeds are not interpreted as spaces and small width
-*    causes content to wrap 1 word per line:
-*    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
-*/
-
-.sr-only {
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-  /* 1 */
-}
-
-/*
-* Extends the .sr-only class to allow the element
-* to be focusable when navigated to via the keyboard:
-* https://www.drupal.org/node/897638
-*/
-
-.sr-only.focusable:active,
-.sr-only.focusable:focus {
-  clip: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  white-space: inherit;
-  width: auto;
 }
 
 /*

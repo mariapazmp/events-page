@@ -1,40 +1,33 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>Vanhack's Events</title>
   <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
-  <!-- Place favicon.ico in the root directory -->
-
-  <link rel="stylesheet" href="css/normalize.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/925bbcca92.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
-
-  <meta name="theme-color" content="#fafafa">
 </head>
 
 <body>
-  <!--[if IE]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]-->
-
   <header>
-    <div class="header">
-      <div class="header--logo">
-        <img src="https://vanhack.com/platform/7fefa6b1dc9802203f976c49b68a47bf.svg" alt="Vanhack Logo">
+    <div class="main-container">
+      <div class="header__options">
+        <div class="header__logo">
+          <img src="https://vanhack.com/platform/7fefa6b1dc9802203f976c49b68a47bf.svg" alt="Vanhack Logo">
+        </div>
+        <nav>
+          <a href="">Find a Job</a>
+          <a href="" class="active">Events</a>
+          <a href="">Premium</a>
+          <a href="">Blog</a>
+        </nav>
       </div>
-      <nav class="header--nav">
-        <a href="">Find a Job</a>
-        <a href="">Events</a>
-        <a href="">Premium</a>
-        <a href="">Blog</a>
-      </nav>
-      <div class="header--user-account">
-        <a hre=""><img src="https://vanhackblobstorageprod.blob.core.windows.net/img/User/20e9a5ac-9761-4d8e-a5de-a31a31056857.jpg" alt="user-avatar"></a>
+      <div class="header__user-account">
+        <a href=""><img src="https://vanhackblobstorageprod.blob.core.windows.net/img/User/20e9a5ac-9761-4d8e-a5de-a31a31056857.jpg" alt="user-avatar"></a>
       </div>
     </div>
   </header>
@@ -42,116 +35,194 @@
   <main id="events-list">
     <div class="hero-banner">
       <section class="main-container">
-        <h1>The best way to get hired abroad is to be prepared.</h1>
-        <div class="hero-banner--image">
-          <img src="img/hero-banner.svg" alt="Illustration of two people on their laptops in the same table talking and working together">
+        <h1>The best way to </br>get hired abroad </br>is to <strong>be prepared.</strong></h1>
+        <div class="hero-banner__image">
+          <img src="https://raw.githubusercontent.com/mariapazmp/events-page/e99b37aa301cf28960ae76876ab37d349e5868bd/img/hero-banner.svg" alt="Illustration of two people on their laptops in the same table talking and working together">
         </div>
       </section>
+    </div>
 
-      <section class="starred-events">
-        <div class="main-container">
-          <div class="starred-event">
-            <div class="starred-event--media">
-              <iframe width="515" height="290" src="https://www.youtube.com/embed/oYI3qbb6eJs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div class="starred-event--info">
-              <span class="starred-event--date">MARCH 7-8 // 2020</span>
-              <span class="starred-event--location">Montreal, Canada</span>
-              <h2><span class="highlited-txt">Apply </span>to the Colombia Recruiting Mission.</h2>
-              <span class="starred-event--description">Get interview for top-tech companies from Canada and Europe and be ready to relocate. A weekend long hackathon and recruiting fair to find your company best match. If you are a senior talent do not hesitate on participate.</span>
-              <span class="starred-event--attendees">102 people attending</span>
+    <section class="starred-events even-container">
+      <div class="main-container">
+        <div class="starred-event">
+          <div class="starred-event__media">
+            <iframe width="515" height="290" src="https://www.youtube.com/embed/oYI3qbb6eJs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="starred-event__info">
+            <span class="starred-event__date">MARCH 7-8 // 2020</span>
+            <span class="starred-event__location"><i class="fas fa-map-marker-alt"></i>Medellín, Colombia</span>
+            <h3><strong>Apply now </strong>to the Colombia Recruiting Mission.</h3>
+            <span class="starred-event__description">Get interview for top-tech companies from Canada and Europe and be ready to relocate. A weekend long hackathon and recruiting fair to find your company best match. If you are a senior talent do not hesitate on participate.</span>
 
+            <div class="starred-event__options">
+              <span class="starred-event__attendees"><i class="fas fa-user"></i>102 people attending</span>
               <button class="secondary-button">Learn More</button>
               <button class="primary-button">Apply Now</button>
             </div>
           </div>
+        </div>
 
-          <div class="starred-event">
-            <div class="starred-event--media"></div>
-            <div class="starred-event--info">
-              <span class="starred-event--date">MARCH 7-8 // 2020</span>
-              <span class="starred-event--location">Montreal, Canada</span>
-              <h2><span class="highlited-txt">Apply </span>to the Colombia Recruiting Mission.</h2>
-              <span class="starred-event--description">Get interview for top-tech companies from Canada and Europe and be ready to relocate. A weekend long hackathon and recruiting fair to find your company best match. If you are a senior talent do not hesitate on participate.</span>
-              <span class="starred-event--attendees">102 people attending</span>
+        <div class="starred-event">
+          <div class="starred-event__media"></div>
+          <div class="starred-event__info">
+            <span class="starred-event__date">MARCH 7-8 // 2020</span>
+            <span class="starred-event__location"><i class="fas fa-map-marker-alt"></i>ONLINE</span>
+            <h3><strong>Apply now </strong>to the Colombia Recruiting Mission.</h3>
+            <span class="starred-event__description">Get interview for top-tech companies from Canada and Europe and be ready to relocate. A weekend long hackathon and recruiting fair to find your company best match. If you are a senior talent do not hesitate on participate.</span>
 
+            <div class="starred-event__options">
+              <span class="starred-event__attendees"><i class="fas fa-user"></i>102 people attending</span>
               <button class="secondary-button">Learn More</button>
               <button class="primary-button">Apply Now</button>
             </div>
           </div>
+        </div>
 
-          <div class="starred-event">
-          <div class="starred-event--media"></div>
-          <div class="starred-event--info">
-            <span class="starred-event--date">MARCH 7-8 // 2020</span>
-            <span class="starred-event--location">Montreal, Canada</span>
-            <h2><span class="highlited-txt">Apply </span>to the Colombia Recruiting Mission.</h2>
-            <span class="starred-event--description">Get interview for top-tech companies from Canada and Europe and be ready to relocate. A weekend long hackathon and recruiting fair to find your company best match. If you are a senior talent do not hesitate on participate.</span>
-            <span class="starred-event--attendees">102 people attending</span>
+        <div class="starred-event">
+        <div class="starred-event__media"></div>
+        <div class="starred-event__info">
+          <span class="starred-event__date">MARCH 7-8 // 2020</span>
+          <span class="starred-event__location"><i class="fas fa-map-marker-alt"></i>Montreal, Canada</span>
+          <h3><strong>Apply now </strong>to the Colombia Recruiting Mission.</h3>
+          <span class="starred-event__description">Get interview for top-tech companies from Canada and Europe and be ready to relocate. A weekend long hackathon and recruiting fair to find your company best match. If you are a senior talent do not hesitate on participate.</span>
 
+          <div class="starred-event__options">
+            <span class="starred-event__attendees"><i class="fas fa-user"></i>102 people attending</span>
             <button class="secondary-button">Learn More</button>
             <button class="primary-button">Apply Now</button>
           </div>
         </div>
-        </div>
-      </section>
+      </div>
+      </div>
+    </section>
 
-      <section class="regular-events">
+    <section class="regular-events">
         <div class="main-container">
 
           <div class="event">
-            <div class="event--media">
-              <img src="img/event-1.jpg" alt="A woman and a man working on their laptops">
+            <div class="event__media">
+              <img src="https://vanhackblobstorageprod.blob.core.windows.net/img/events/thumbnail/06da3742-d896-4573-87f9-9fccb92f341a.jpg" alt="A woman and a man working on their laptops">
             </div>
-            <div class="event--info">
-              <span class="event--type">Open webinar</span>
+            <div class="event__info">
+              <span class="event__type">Open webinar</span>
 
-              <span class="starred-event--date">Sat, August 22</span>
-              <h2>How Ruth got hired and relocated to Canada. Success Cases of Vanhack.</h2>
-              <span class="event--location">Montreal, Canada</span>
-              <span class="event--attendees">102 people attending</span>
+              <span class="starred-event__date">Sat, August 22</span>
+              <h3>How Ruth got hired and relocated to Canada. Success Cases of Vanhack.</h3>
+              <span class="event__location">Montreal, Canada</span>
+              <span class="event__attendees">102 people attending</span>
 
               <button class="secondary-button">Learn More</button>
-              <span class="event--deadline"><b>Deadline: </b>August 20th.</span>
+              <span class="event__deadline"><b>Deadline: </b>August 20th.</span>
               <button class="primary-button primary-button__checked"><span>Applied</span><i class="fa fa-check" aria-hidden="true"></i></button>
             </div>
           </div>
 
           <div class="event">
-            <div class="event--media">
-              <img src="img/event-1.jpg" alt="A woman and a man working on their laptops">
+            <div class="event__media">
+              <img src="https://raw.githubusercontent.com/mariapazmp/events-page/master/img/event-1.png" alt="A woman and a man working on their laptops">
             </div>
-            <div class="event--info">
-              <span class="event--type event--type__premium">Premium Webinar</span>
+            <div class="event__info">
+              <span class="event__type event__type__premium">Premium Webinar</span>
 
-              <span class="starred-event--date">Sat, August 22</span>
-              <h2>How Ruth got hired and relocated to Canada. Success Cases of Vanhack.</h2>
-              <span class="event--location">Montreal, Canada</span>
-              <span class="event--attendees">102 people attending</span>
+              <span class="starred-event__date">Sat, August 22</span>
+              <h3>How Ruth got hired and relocated to Canada. Success Cases of Vanhack.</h3>
+              <span class="event__location">Montreal, Canada</span>
+              <span class="event__attendees">102 people attending</span>
 
               <button class="secondary-button">Learn More</button>
-              <span class="event--deadline"><b>Deadline: </b>August 20th.</span>
+              <span class="event__deadline"><b>Deadline: </b>August 20th.</span>
               <button class="primary-button"><span>Apply</span><i class="fa fa-check" aria-hidden="true"></i></button>
+            </div>
+          </div>
+
+          <div class="event">
+            <div class="event__media">
+              <img src="https://raw.githubusercontent.com/mariapazmp/events-page/master/img/event-2.png" alt="A woman and a man working on their laptops">
+            </div>
+            <div class="event__info">
+              <span class="event__type">Open webinar</span>
+
+              <span class="starred-event__date">Sat, August 22</span>
+              <h3>How Ruth got hired and relocated to Canada. Success Cases of Vanhack.</h3>
+              <span class="event__location">Montreal, Canada</span>
+              <span class="event__attendees">102 people attending</span>
+
+              <button class="secondary-button">Learn More</button>
+              <span class="event__deadline"><b>Deadline: </b>August 20th.</span>
+              <button class="primary-button primary-button__checked"><span>Applied</span><i class="fa fa-check" aria-hidden="true"></i></button>
+            </div>
+          </div>
+
+          <div class="event">
+            <div class="event__media">
+              <img src="https://raw.githubusercontent.com/mariapazmp/events-page/master/img/event-3.png" alt="A woman and a man working on their laptops">
+            </div>
+            <div class="event__info">
+              <span class="event__type">Open webinar</span>
+
+              <span class="starred-event__date">Sat, August 22</span>
+              <h3>How Ruth got hired and relocated to Canada. Success Cases of Vanhack.</h3>
+              <span class="event__location">Montreal, Canada</span>
+              <span class="event__attendees">102 people attending</span>
+
+              <button class="secondary-button">Learn More</button>
+              <span class="event__deadline"><b>Deadline: </b>August 20th.</span>
+              <button class="primary-button primary-button__checked"><span>Applied</span><i class="fa fa-check" aria-hidden="true"></i></button>
+            </div>
+          </div>
+
+          <div class="event">
+            <div class="event__media">
+              <img src="https://vanhackblobstorageprod.blob.core.windows.net/img/events/thumbnail/06da3742-d896-4573-87f9-9fccb92f341a.jpg" alt="A woman and a man working on their laptops">
+            </div>
+            <div class="event__info">
+              <span class="event__type">Open webinar</span>
+
+              <span class="starred-event__date">Sat, August 22</span>
+              <h3>How Ruth got hired and relocated to Canada. Success Cases of Vanhack.</h3>
+              <span class="event__location">Montreal, Canada</span>
+              <span class="event__attendees">102 people attending</span>
+
+              <button class="secondary-button">Learn More</button>
+              <span class="event__deadline"><b>Deadline: </b>August 20th.</span>
+              <button class="primary-button primary-button__checked"><span>Applied</span><i class="fa fa-check" aria-hidden="true"></i></button>
+            </div>
+          </div>
+
+          <div class="event">
+            <div class="event__media">
+              <img src="https://vanhackblobstorageprod.blob.core.windows.net/img/events/thumbnail/7e38624b-ba79-4e1d-9817-d4209edbb685.jpg" alt="A woman and a man working on their laptops">
+            </div>
+            <div class="event__info">
+              <span class="event__type">Open webinar</span>
+
+              <span class="starred-event__date">Sat, August 22</span>
+              <h3>How Ruth got hired and relocated to Canada. Success Cases of Vanhack.</h3>
+              <span class="event__location">Montreal, Canada</span>
+              <span class="event__attendees">102 people attending</span>
+
+              <button class="secondary-button">Learn More</button>
+              <span class="event__deadline"><b>Deadline: </b>August 20th.</span>
+              <button class="primary-button primary-button__checked"><span>Applied</span><i class="fa fa-check" aria-hidden="true"></i></button>
             </div>
           </div>
         </div>
       </section>
-    </div>
   </main>
 
   <main id="event-details">
     <section class="main-container">
-      <h1 class="event-details--title">Virtual Hiring Event for Women in Tech. Canada and Europe 2020</h1>
+      <h2 class="event-details__title">Virtual Hiring Event for Women in Tech. Canada and Europe 2020</h2>
 
-      <div class="event-details--date">SEPTEMBER 21 - 25 // 2020</div>
+      <div class="event-details__date">SEPTEMBER 21 - 25 // 2020</div>
       <button>Successfully applied <i class="fa fa-check" aria-hidden="true"></i></button>
 
-      <div class="event-details--body">
+      <div class="event-details__body">
         <article>
-          <div class="event-details--featured-image">
+          <div class="event-details__featured-image">
             <img src="img/event-1.png" alt="Illustration of a group of women of various physical characteristics and fashion styles">
           </div>
-          <div class="event-details--article-body">
+          <div class="event-details__article-body">
             <p>VanHack is hosting our first <strong>Virtual Hiring Event for Women the week of September 21st.</strong> If you are a woman developer and are looking for a job abroad you should apply.</p>
 
             <p>We are looking for candidates with:&nbsp;</p>
@@ -195,10 +266,10 @@
           </div>
         </article>
         <aside>
-          <div class="event-details--options">
-            <div class="event-details--date"><i class="fa fa-calendar-alt-regular" aria-hidden="true"></i>SEPTEMBER 21 - 25 // 2020</div>
-            <div class="event-details--event-type">Premium Webinar</div>
-            <span class="event-details--location"><i class="fa fa-map-marker-alt-solid" aria-hidden="true"></i>Montreal, Canada</span>
+          <div class="event-details__options">
+            <div class="event-details__date"><i class="fa fa-calendar-alt-regular" aria-hidden="true"></i>SEPTEMBER 21 - 25 // 2020</div>
+            <div class="event-details__event-type">Premium Webinar</div>
+            <span class="event-details__location"><i class="fa fa-map-marker-alt-solid" aria-hidden="true"></i>Montreal, Canada</span>
 
             <button class="tertiary-button"><i class="fa fa-share-square-solid" aria-hidden="true"></i>Share Event</button>
             <button class="primary-button">Apply</button>
@@ -234,12 +305,6 @@
     <span><a href="https://www.instagram.com/mariapazmp/"></a></span>
     <span>2020</span>
   </footer>
-
-  <script src="js/vendor/modernizr-3.8.0.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
-  <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
 
 </body>
 

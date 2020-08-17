@@ -64,6 +64,8 @@ i.fas {
 
   --success-color: #41b809;
   --warning-color: #fcab10;
+
+  --box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.27);
 }
 
 .main-container {
@@ -277,8 +279,64 @@ h1 strong, .starred-event:first-child strong {
 }
 
 .regular-events .event {
-  flex: 1 1 0;
-  padding: 1.5rem;
+  position: relative;
+  -webkit-box-shadow: var(--box-shadow);
+  -moz-box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow);
+}
+
+.event__media img {
+  height: 150px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.event__info {
+  padding: 1rem;
+  position: relative;
+}
+
+.regular-events .event__type {
+  color: var(--tertiary-color);
+  box-shadow: var(--box-shadow);
+  background: var(--white-background);
+  -webkit-box-shadow: var(--box-shadow);
+  -moz-box-shadow: var(--box-shadow);
+  font-size: 0.8rem;
+  padding: 0.5rem 1rem;
+  position: absolute;
+  text-align: center;
+  top: -1.3rem;
+  right: 1rem;
+}
+
+.regular-events .event__type--premium {
+  border: 2px var(--secondary-background-color) solid;
+  color: var(--secondary-background-color);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.event__options {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 0 0.5rem;
+}
+
+.regular-events .event__deadline {
+  color: var(--secondary-color);
+}
+
+.regular-events .primary-button {
+  background: var(--secondary-color);
+  color: var(--white-background);
+  padding: 0.4rem 1.5rem;
+}
+
+.regular-events .primary-button--checked {
+  color: var(--secondary-color);
+  background: none;
+  border: 2px var(--secondary-color) solid;
 }
 
 

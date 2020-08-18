@@ -82,6 +82,7 @@ i.fas {
   --background-color: #dae0e6;
   --secondary-background-color: #463eb4;
   --white-background: #ffffff;
+  --black-background: 0, 0, 0;
 
   --success-color: #41b809;
   --warning-color: #fcab10;
@@ -459,9 +460,65 @@ h1 strong, .starred-event:first-child strong {
   display: none;
 }
 
-.confirmation-modal, .warning-modal {
+.warning-modal {
   display: none;
 }
+
+.modal.active {
+  display: block;
+}
+
+.modal {
+  background: rgba(var(--black-background), 0.7);
+  display: none;
+  left: 0;
+  height: 100%;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  -webkit-tap-highlight-color: transparent;
+  width: 100%;
+  will-change: opacity;
+  z-index: 3;
+}
+
+.modal__content {
+  background: var(--white-background);
+  border-radius: 0.5rem;
+  display: flex;
+  max-width: 40rem;
+  margin: 15% auto;
+  padding: 2rem 3rem;
+  position: relative;
+}
+
+.modal__content h3 {
+  color: var(--text-color-active);
+  margin: 0 0 1rem;
+  font-size: 1.5rem;
+}
+
+.modal__content button {
+  margin-top: 1.5rem;
+}
+
+.modal__close {
+  font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+  right: 1.5rem;
+  top: 1rem;
+}
+
+.confirmation-modal .info-icon {
+  color: var(--success-color);
+}
+
+.modal .info-icon {
+  font-size: 5rem;
+  margin-right: 2rem;
+}
+
 
 /* ==========================================================================
    Base styles: opinionated defaults

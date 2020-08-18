@@ -13,6 +13,7 @@
 </head>
 
 <body>
+  <div class="overlay"></div>
   <header>
     <div class="main-container">
       <div class="header__options">
@@ -285,23 +286,26 @@
     </section>
   </main>
 
-  <div class="confirmation-modal">
-    <div class="info-icon"><i class="fa" aria-hidden="true"></i></div>
-    <div class="info">
-      <p>You have successfully applied to</p>
-      <h2>Virtual Hiring Event for Women</h2>
-      <p>Check your email for more information about this event.</p>
-      <button class="tertiary-button"><i class="fa fa-share-square-solid" aria-hidden="true"></i>Share with your friends</button>
+  <div class="modal confirmation-modal">
+    <div class="modal__content">
+      <span class="modal__close">&times;</span>
+      <div class="info-icon"><i class="far fa-check-circle"></i></div>
+      <div class="info">
+        <p>You have successfully applied to</p>
+        <h3>Virtual Hiring Event for Women</h3>
+        <p>Check your email for more information about this event.</p>
+        <button class="tertiary-button"><i class="fas fa-share-square"></i>Share with your friends</button>
+      </div>
     </div>
   </div>
 
   <div class="warning-modal">
-    <div class="info-icon"><i class="fa" aria-hidden="true"></i></div>
+    <div class="info-icon"><i class="fas fa-exclamation-triangle"></i></div>
     <div class="info">
       <p>This is a</p>
       <h2>Premium Webinar</h2>
       <p>Read more about Vanhack Premium and how to get ready to get hired abroad.</p>
-      <button class="primary-button" data-event-status="available"><i class="fa fa-share-square-solid" aria-hidden="true"></i>Learn More</button>
+      <button class="primary-button" data-event-status="available"><i class="fas fa-share-square"></i>Learn More</button>
     </div>
   </div>
 

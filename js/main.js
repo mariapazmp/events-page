@@ -27,8 +27,23 @@ function pageRouter() {
 }
 
 function applyToEvent(e) {
+  openModal();
 }
 
+function openModal() {
+  const modal = document.querySelector(".modal");
+
+  if (!modal.classList.contains("active")) {
+    modal.classList.add("active");
+  }
+  closeModal(modal);
+}
+
+function closeModal(modal) {
+  modal.addEventListener('click', event => {
+    modal.classList.remove("active");
+  });
+}
 
 
 

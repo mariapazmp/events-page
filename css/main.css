@@ -218,6 +218,39 @@ footer a:hover {
   font-size: 1.3rem;
 }
 
+.social-media-sharing {
+  align-items: center;
+  background: var(--background-color);
+  border-radius: 0.3rem;
+  display: flex;
+  padding: 1rem;
+}
+
+.social-media-sharing h4 {
+  margin: 0 0 0.2rem;
+  font-weight: 400;
+}
+
+.social-media-sharing ul {
+  display: flex;
+  margin: 0;
+  padding-left: 0.7rem;
+}
+
+.social-media-sharing li {
+  list-style: none;
+  margin-left: 1rem
+}
+
+.social-media-sharing i {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.social-media-sharing i:hover {
+  color: var(--secondary-color);
+}
+
 /* ==========================================================================
    Event Page's styles
    ========================================================================== */
@@ -525,8 +558,9 @@ h1 strong, .starred-event:first-child strong {
   padding: 0.8rem 1rem;
 }
 
-.event-details__body .primary-button {
-  float: right;
+.event-details__body .social-media-sharing {
+  padding: 0;
+  margin-top: 1rem;
 }
 
 /* ==========================================================================

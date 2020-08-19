@@ -161,7 +161,8 @@ function setEventDetails(eventKey) {
   }
 
   showEventDetail();
-};
+  setSocialSharingLinks(event.title);
+}
 
 function showEventDetail() {
   document.querySelector("#events-list").style.display = 'none';
@@ -221,7 +222,6 @@ function applyToEvent(eventNode) {
 }
 
 function disableButtons(eventNode) {
-  console.log("eventNode", eventNode);
   const applyButtons = eventNode.querySelectorAll(".primary-button");
 
   applyButtons.forEach(function (button) {
@@ -254,6 +254,7 @@ function getEventKey(eventNode) {
 function setModalInfo(eventNode) {
   const eventTitle = eventNode.querySelector(".event__title").innerText;
   document.querySelector(".confirmation-modal h3").innerText = eventTitle;
+  setSocialSharingLinks(eventTitle);
   openModal("confirmation-modal");
 }
 
@@ -272,5 +273,30 @@ function closeModal(modal) {
   });
 }
 
+function socialWindow(url) {
+  const left = (screen.width - 570) / 2;
+  const top = (screen.height - 570) / 2;
+  const params = "menubar=no,toolbar=no,status=no,width=570,height=570,top=" + top + ",left=" + left;
+  window.open(url,"NewWindow",params);
+}
 
+function setSocialSharingLinks(linkDescription) {
+  const pageUrl = encodeURIComponent("https://vanhack.com/platform/#/events");
+  const tweet = encodeURIComponent("I just applied to "+linkDescription+" at Vanhack.com. Check more events!");
+
+  document.querySelector(".sharing-link.twitter").addEventListener('click', e => {
+    const url = "https://twitter.com/intent/tweet?url=" + pageUrl + "&text=" + tweet;
+    socialWindow(url);
+  });
+
+  document.querySelector(".sharing-link.facebook").addEventListener('click', e => {
+    const url = "https://www.facebook.com/sharer.php?u=" + pageUrl;
+    socialWindow(url);
+  });
+
+  document.querySelector(".sharing-link.linkedin").addEventListener('click', e => {
+    const url = "https://www.linkedin.com/shareArticle?mini=true&url=" + pageUrl;
+    socialWindow(url);
+  });
+}
 

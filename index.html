@@ -45,55 +45,6 @@
 
     <section class="starred-events even-container">
       <div class="main-container">
-        <div class="starred-event">
-          <div class="starred-event__media">
-            <iframe width="515" height="290" src="https://www.youtube.com/embed/oYI3qbb6eJs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          <div class="starred-event__info">
-            <span class="starred-event__date">MARCH 7-8 // 2020</span>
-            <span class="starred-event__location"><i class="fas fa-map-marker-alt"></i>Medellín, Colombia</span>
-            <h3><strong>Apply now </strong>to the Colombia Recruiting Mission.</h3>
-            <span class="starred-event__description">Get interview for top-tech companies from Canada and Europe and be ready to relocate. A weekend long hackathon and recruiting fair to find your company best match. If you are a senior talent do not hesitate on participate.</span>
-
-            <div class="starred-event__options">
-              <span class="starred-event__attendees"><i class="fas fa-user"></i>102 people attending</span>
-              <button class="secondary-button details-link">Learn More</button>
-              <button class="primary-button" data-event-status="available">Apply Now</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="starred-event">
-          <div class="starred-event__media"></div>
-          <div class="starred-event__info">
-            <span class="starred-event__date">MARCH 7-8 // 2020</span>
-            <span class="starred-event__location"><i class="fas fa-map-marker-alt"></i>ONLINE</span>
-            <h3><strong>Apply now </strong>to the Colombia Recruiting Mission.</h3>
-            <span class="starred-event__description">Get interview for top-tech companies from Canada and Europe and be ready to relocate. A weekend long hackathon and recruiting fair to find your company best match. If you are a senior talent do not hesitate on participate.</span>
-
-            <div class="starred-event__options">
-              <span class="starred-event__attendees"><i class="fas fa-user"></i>102 people attending</span>
-              <button class="secondary-button details-link">Learn More</button>
-              <button class="primary-button" data-event-status="available">Apply Now</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="starred-event">
-        <div class="starred-event__media"></div>
-        <div class="starred-event__info">
-          <span class="starred-event__date">MARCH 7-8 // 2020</span>
-          <span class="starred-event__location"><i class="fas fa-map-marker-alt"></i>Montreal, Canada</span>
-          <h3><strong>Apply now </strong>to the Colombia Recruiting Mission.</h3>
-          <span class="starred-event__description">Get interview for top-tech companies from Canada and Europe and be ready to relocate. A weekend long hackathon and recruiting fair to find your company best match. If you are a senior talent do not hesitate on participate.</span>
-
-          <div class="starred-event__options">
-            <span class="starred-event__attendees"><i class="fas fa-user"></i>102 people attending</span>
-            <button class="secondary-button details-link">Learn More</button>
-            <button class="primary-button" data-event-status="available">Apply Now</button>
-          </div>
-        </div>
-      </div>
       </div>
     </section>
 
@@ -103,17 +54,16 @@
       </section>
   </main>
 
-  <main id="event-details">
+  <main id="event-details" class="event" data-key="">
     <section class="main-container">
       <ul class="breadcrumbs">
         <li class="breadcrumbs__item"><a href="" class="details-link">Vanhack Events</a></li>
-        <li class="breadcrumbs__item">Virtual Hiring Event for Women in Tech...</li>
+        <li class="breadcrumbs__item breadcrumbs__item--current"></li>
       </ul>
 
-      <h2 class="event-details__title">Virtual Hiring Event for Women in Tech. </br> Canada and Europe 2020</h2>
-
-      <div class="event-details__date">SEPTEMBER 21 - 25 // 2020</div>
-      <button class="primary-button--checked"><i class="fas fa-check" aria-hidden="true"></i>Successfully applied</button>
+      <h2 class="event-details__title event__title"></h2>
+      <div class="event-details__date"></div>
+      <button class="primary-button" data-event-status="">Apply Now</button>
 
       <div class="event-details__body">
         <article>
@@ -165,12 +115,12 @@
         </article>
         <aside>
           <div class="event-details__options">
-            <div class="event-details__date"><i class="far fa-calendar-alt"></i><span>Monday, September 21 - 25 // 2020 08:00 to 19:30 GMT-5</span></div>
-            <div class="event-details__event-type">Premium Webinar</div>
-            <span class="event-details__location"><i class="fas fa-map-marker-alt"></i>Online Event</span>
+            <div class="event-details__date"><i class="far fa-calendar-alt"></i><span></span></div>
+            <div class="event-details__event-type"></div>
+            <div class="event-details__location"><i class="fas fa-map-marker-alt"></i><span>Online Event</span></div>
 
             <button class="tertiary-button"><i class="fas fa-share-square"></i>Share Event</button>
-            <button class="primary-button" data-event-status="available">Apply</button>
+            <button class="primary-button" data-event-status="">Apply Now</button>
           </div>
         </aside>
       </div>
@@ -183,27 +133,30 @@
       <div class="info-icon"><i class="far fa-check-circle"></i></div>
       <div class="info">
         <p>You have successfully applied to</p>
-        <h3>Virtual Hiring Event for Women</h3>
+        <h3></h3>
         <p>Check your email for more information about this event.</p>
         <button class="tertiary-button"><i class="fas fa-share-square"></i>Share with your friends</button>
       </div>
     </div>
   </div>
 
-  <div class="warning-modal">
-    <div class="info-icon"><i class="fas fa-exclamation-triangle"></i></div>
-    <div class="info">
-      <p>This is a</p>
-      <h2>Premium Webinar</h2>
-      <p>Read more about Vanhack Premium and how to get ready to get hired abroad.</p>
-      <button class="primary-button" data-event-status="available"><i class="fas fa-share-square"></i>Learn More</button>
+  <div class="modal warning-modal">
+    <div class="modal__content">
+      <span class="modal__close">&times;</span>
+      <div class="info-icon"><i class="fas fa-exclamation-triangle"></i></div>
+      <div class="info">
+        <span>This is a</span>
+        <h3>Premium Webinar</h3>
+        <p>Read more about Vanhack Premium and how to access to premium content like this one.</p>
+        <button class="secondary-button" data-event-status="available" onclick="location.href='https://vanhack.com/premium';"><i class="fas fa-share-square"></i>Learn More</button>
+      </div>
     </div>
   </div>
 
   <footer>
     <div class="logo"><img src="https://vanhack.com/static-desktop/699de0b98e1d66b82a32905802aa6cbc.svg" alt="Vanhack logo"></div>
     <p class="rights">Designed and developed by Maria Paz Muñoz</p>
-    <span><a href="https://www.instagram.com/mariapazmp/"></a></span>
+    <span><a href="https://www.instagram.com/mariapazmp/">@mariapazmp</a></span>
     <span>2020</span>
   </footer>
 

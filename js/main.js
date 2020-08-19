@@ -2,113 +2,263 @@ let currentPage = "events-list";
 
 let MOCK_USER = {
   name: "Maria Paz Muñoz",
-  appliedEvents: [
-    "women-mission-2020",
-  ]
+  appliedEvents: ["women-mission-2020"],
+  subscriptionType: "regular"
 };
 
 const MOCK_EVENTS = [
   {
     key: "ruth-hired-canada",
     title: "How Ruth got hired and relocated to Canada. Success Cases of Vanhack.",
-    media: "https://vanhackblobstorageprod.blob.core.windows.net/img/events/thumbnail/06da3742-d896-4573-87f9-9fccb92f341a.jpg",
+    media: "<img class='details-link' src='https://vanhackblobstorageprod.blob.core.windows.net/img/events/thumbnail/06da3742-d896-4573-87f9-9fccb92f341a.jpg'>",
     type: "Meetup",
-    date: "Sat, August 22",
+    date: "Sat, August 22 // 2020",
     location: "Montreal, Canada",
     deadline: "August 20th"
   },
   {
     key: "women-mission-2020",
     title: "How Ruth got hired and relocated to Canada. Success Cases of Vanhack.",
-    media: "https://raw.githubusercontent.com/mariapazmp/events-page/master/img/event-1.png",
+    media: "<img class='details-link' src='https://raw.githubusercontent.com/mariapazmp/events-page/master/img/event-1.png'>",
     type: "Meetup",
-    date: "Sat, August 22",
+    date: "Sat, August 22 // 2020",
     location: "Montreal, Canada",
     deadline: "August 20th"
   },
   {
     key: "meetup-tech-interview",
     title: "How Ruth got hired and relocated to Canada. Success Cases of Vanhack.",
-    media: "https://raw.githubusercontent.com/mariapazmp/events-page/master/img/event-2.png",
+    media: "<img class='details-link' src='https://raw.githubusercontent.com/mariapazmp/events-page/master/img/event-2.png'>",
     type: "Premium Webinar",
-    date: "Sat, August 22",
+    date: "Sat, August 22 // 2020",
     location: "Montreal, Canada",
     deadline: "August 20th"
   },
   {
     key: "interview-practice-august",
     title: "How Ruth got hired and relocated to Canada. Success Cases of Vanhack.",
-    media: "https://raw.githubusercontent.com/mariapazmp/events-page/master/img/event-1.png",
+    media: "<img class='details-link' src='https://raw.githubusercontent.com/mariapazmp/events-page/master/img/event-1.png'>",
     type: "Open Webinar",
-    date: "Sat, August 22",
+    date: "Sat, August 22 // 2020",
     location: "Montreal, Canada",
     deadline: "August 20th"
   },
   {
     key: "pablo-senior-dev",
     title: "How Ruth got hired and relocated to Canada. Success Cases of Vanhack.",
-    media: "https://raw.githubusercontent.com/mariapazmp/events-page/master/img/event-3.png",
+    media: "<img class='details-link' src='https://raw.githubusercontent.com/mariapazmp/events-page/master/img/event-3.png'>",
     type: "Premium Webinar",
-    date: "Sat, August 22",
+    date: "Sat, August 22 // 2020",
     location: "ONLINE",
     deadline: "August 20th"
   },
   {
     key: "stefa-hired-vancouver",
     title: "How Ruth got hired and relocated to Canada. Success Cases of Vanhack.",
-    media: "https://vanhackblobstorageprod.blob.core.windows.net/img/events/thumbnail/7e38624b-ba79-4e1d-9817-d4209edbb685.jpg",
+    media: "<img class='details-link' src='https://vanhackblobstorageprod.blob.core.windows.net/img/events/thumbnail/7e38624b-ba79-4e1d-9817-d4209edbb685.jpg'>",
     type: "Premium Webinar",
-    date: "Sat, August 22",
+    date: "Sat, August 22 // 2020",
     location: "ONLINE",
     deadline: "August 20th"
   },
+  {
+    key: "colombia-recruiting-mission-2020",
+    title: "<strong>Apply</strong> now to the Colombia Recruiting Mission.",
+    media: '<iframe width=\"515\" height=\"290\" src=\"https://www.youtube.com/embed/oYI3qbb6eJs\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>',
+    description: "Get interview for top-tech companies from Canada and Europe and be ready to relocate. A weekend long hackathon and recruiting fair to find your company best match. If you are a senior talent do not hesitate on participate.",
+    type: "Recruiting Mission",
+    date: "Sat, August 22 // 2020",
+    location: "Montreal, Canada",
+    deadline: "August 20th",
+    attendees: 102,
+  },
+  {
+    key: "colombia-recruiting-mission",
+    title: "Apply now to the Colombia <strong>Recruiting Mission.</strong>",
+    media: "<img class='details-link' src='https://vanhackblobstorageprod.blob.core.windows.net/img/events/thumbnail/06da3742-d896-4573-87f9-9fccb92f341a.jpg'>",
+    description: "Get interview for top-tech companies from Canada and Europe and be ready to relocate. A weekend long hackathon and recruiting fair to find your company best match. If you are a senior talent do not hesitate on participate.",
+    type: "Leap",
+    date: "Sat, August 22 // 2020",
+    location: "Montreal, Canada",
+    deadline: "August 20th",
+    attendees: 323,
+  },
+  {
+    key: "colombia-vanhackathon-2020",
+    title: "Apply now to the Colombia Recruiting Mission.",
+    media: "<img class='details-link' src='https://vanhackblobstorageprod.blob.core.windows.net/img/events/thumbnail/06da3742-d896-4573-87f9-9fccb92f341a.jpg'>",
+    description: "Get interview for top-tech companies from Canada and Europe and be ready to relocate. A weekend long hackathon and recruiting fair to find your company best match. If you are a senior talent do not hesitate on participate.",
+    type: "Vanhackathon",
+    date: "Sat, August 22 // 2020",
+    location: "Montreal, Canada",
+    deadline: "August 20th",
+    attendees: 78,
+  },
 ];
 
-document.body.addEventListener('click', e => {
-  if (e.target && e.target.matches(".details-link")) {
-    pageRouter();
-  }
-});
+populateEvents();
+onApplyButtonClick();
+onSeeDetailsClick();
 
-document.body.addEventListener('click', e => {
-  if (e.target && e.target.matches("[data-event-status]")) {
-    applyToEvent(e.target.closest(".event"));
-  }
-});
+function onApplyButtonClick() {
+  document.body.addEventListener('click', e => {
+    if (e.target && e.target.matches("button[data-event-status]")) {
+        applyToEvent(e.target.closest(".event"));
+    }
+  });
+}
 
-function pageRouter() {
-  if (currentPage==="events-list") {
-      document.querySelector("#events-list").style.display = 'none';
-      document.querySelector("#event-details").style.display = 'block';
-      window.scrollTo(0, 0);
-      currentPage = "event-details";
+function onSeeDetailsClick() {
+  document.body.addEventListener('click', e => {
+    if (e.target && e.target.matches(".details-link")) {
+      const eventKey = getEventKey(e.target.closest(".event"));
+      pageRouter(eventKey);
+    }
+  });
+}
+
+function pageRouter(eventKey) {
+  if (currentPage ==="events-list") {
+    setEventDetails(eventKey);
   } else if (currentPage === "event-details") {
-      document.querySelector("#events-list").style.display = 'block';
-      document.querySelector("#event-details").style.display = 'none';
-      window.scrollTo(0, 0);
-      currentPage = "events-list";
+    showEventsList();
+  }
+}
+
+function populateEvents() {
+  MOCK_EVENTS.forEach(event => {
+    if( event.type.toLowerCase() === "leap" ||
+      event.type.toLowerCase() === "recruiting mission" ||
+      event.type.toLowerCase() === "vanhackathon") {
+      createEventNode(event, "starred-events");
+    } else {
+      createEventNode(event,"regular-events");
+    }
+  });
+}
+
+function showEventsList() {
+  document.querySelector("#events-list").style.display = 'block';
+  document.querySelector("#event-details").style.display = 'none';
+  window.scrollTo(0, 0);
+  currentPage = "events-list";
+}
+
+function setEventDetails(eventKey) {
+  const event = getEventObject(eventKey);
+
+  document.querySelector("#event-details").setAttribute("data-key", event.key);
+  document.querySelector("#event-details .breadcrumbs__item--current").innerHTML = event.title;
+  document.querySelector(".event-details__title").innerHTML = event.title;
+  document.querySelector(".event-details__featured-image").innerHTML = event.media;
+  document.querySelector(".event-details__date").textContent = event.date;
+  document.querySelector(".event-details__date span").textContent = event.date;
+  document.querySelector(".event-details__event-type").textContent = event.type;
+  document.querySelector(".event-details__location span").textContent = event.location;
+
+  if (hasApplied(eventKey)) {
+    disableButtons(document.querySelector("#event-details"));
+  }
+
+  showEventDetail();
+};
+
+function showEventDetail() {
+  document.querySelector("#events-list").style.display = 'none';
+  document.querySelector("#event-details").style.display = 'block';
+  window.scrollTo(0, 0);
+  currentPage = "event-details";
+}
+
+function createEventNode(event, eventClassification) {
+  const eventsListContainer = document.querySelector("."+eventClassification+" .main-container");
+
+  const eventNode = document.createElement("div");
+  eventNode.classList.add("event");
+  eventNode.setAttribute("data-key", event.key);
+  eventsListContainer.appendChild(eventNode);
+
+  eventNode.innerHTML = '<div class="event__media">' +event.media+
+    '            </div>\n' +
+    '            <div class="event__info">\n' +
+    '              <span class="event__type">'+event.type+'</span>\n' +
+    '\n' +
+    '              <span class="event__date">'+event.date+'</span>\n' +
+    '              <h2 class="event__title">'+event.title+'</h2>\n' +
+    '              <span class="event__description">'+event.description+'</span>\n'+
+    '              <span class="event__location"><i class="fas fa-map-marker-alt"></i>'+event.location+'</span>\n' +
+    '\n' +
+    '              <div class="event__options">\n' +
+    '                <span class="event__deadline"><b>Deadline: </b>'+event.deadline+'</span>\n' +
+    '                <span class="event__attendees"><i class="fas fa-map-marker-alt"></i>'+event.attendees+' people attending</span>\n' +
+    '                <button class="secondary-button details-link">Learn More</button>\n' +
+    '                <button class="primary-button" data-event-status="available">Apply</button>\n' +
+    '              </div>\n' +
+    '              </div>';
+
+  if (isPremiumEvent(event)) {
+    eventNode.querySelector(".event__type").classList.add("event__type--premium");
+  }
+
+  if (hasApplied(event.key)) {
+    disableButtons(eventNode);
   }
 }
 
 function applyToEvent(eventNode) {
   const currentEventKey = getEventKey(eventNode);
-  const cta = eventNode.querySelector(".primary-button");
-  if (hasApplied(currentEventKey)) {
-    return;
+  const event = getEventObject(currentEventKey);
+  if (event.type.toLowerCase() === "premium webinar" && MOCK_USER.subscriptionType.toLowerCase() !== "premium") {
+    openModal("warning-modal");
+  } else {
+    if (hasApplied(currentEventKey)) {
+      return;
+    }
+    MOCK_USER.appliedEvents.push(currentEventKey);
+    setModalInfo(eventNode);
+    disableButtons(eventNode);
   }
-  MOCK_USER.appliedEvents.push(currentEventKey);
-  cta.classList.add("primary-button--checked");
-  cta.innerHTML = '<i class="fas fa-check" aria-hidden="true"></i>Applied';
-  openModal();
-  console.log(MOCK_USER.appliedEvents);
+}
+
+function disableButtons(eventNode) {
+  console.log("eventNode", eventNode);
+  const applyButtons = eventNode.querySelectorAll(".primary-button");
+
+  applyButtons.forEach(function (button) {
+    button.classList.add("primary-button--checked");
+    button.innerHTML = '<i class="fas fa-check" aria-hidden="true"></i>Applied';
+    button.setAttribute("disabled", true);
+  })
+}
+
+function hasApplied(eventKey) {
+  if(MOCK_USER.appliedEvents.indexOf(eventKey) > -1) {
+    return true;
+  }
+}
+
+function isPremiumEvent(event) {
+  if(event.type === "Premium Webinar") {
+    return true;
+  }
+}
+
+function getEventObject(eventKey) {
+  return MOCK_EVENTS.find(element => element.key === eventKey);
 }
 
 function getEventKey(eventNode) {
   return eventNode.dataset.key;
 }
 
-function openModal() {
-  const modal = document.querySelector(".modal");
+function setModalInfo(eventNode) {
+  const eventTitle = eventNode.querySelector(".event__title").innerText;
+  document.querySelector(".confirmation-modal h3").innerText = eventTitle;
+  openModal("confirmation-modal");
+}
+
+function openModal(modalType) {
+  const modal = document.querySelector("."+ modalType);
 
   if (!modal.classList.contains("active")) {
     modal.classList.add("active");
@@ -122,53 +272,5 @@ function closeModal(modal) {
   });
 }
 
-function populateRegularEvents() {
-  const eventsList = document.querySelector(".regular-events .main-container");
-
-  MOCK_EVENTS.forEach(event => {
-    const eventNode = document.createElement("div");
-    eventNode.classList.add("event");
-    eventNode.setAttribute("data-key", event.key);
-
-    eventsList.appendChild(eventNode);
-    eventNode.innerHTML = '<div class="event__media">' +
-      '              <img class="details-link" src='+event.media+'>\n' +
-      '            </div>\n' +
-      '            <div class="event__info">\n' +
-      '              <span class="event__type">'+event.type+'</span>\n' +
-      '\n' +
-      '              <span class="event__date">'+event.date+'</span>\n' +
-      '              <h4>'+event.title+'</h4>\n' +
-      '              <span class="event__location"><i class="fas fa-map-marker-alt"></i>'+event.location+'</span>\n' +
-      '\n' +
-      '              <div class="event__options">\n' +
-      '                <span class="event__deadline"><b>Deadline: </b>'+event.deadline+'</span>\n' +
-      '                <button class="primary-button" data-event-status="available"><span>Apply</span></button>\n' +
-      '              </div>\n' +
-      '              </div>';
-
-    if (isPremiumEvent(event)) {
-      eventNode.querySelector(".event__type").classList.add("event__type--premium");
-    }
-
-    if (hasApplied(event)) {
-      eventNode.querySelector(".primary-button").classList.add("primary-button--checked");
-    }
-  });
-}
-
-function isPremiumEvent(event) {
-  if(event.type === "Premium Webinar") {
-    return true;
-  }
-}
-
-function hasApplied(event) {
-  if(MOCK_USER.appliedEvents.indexOf(event) > -1) {
-    return true;
-  }
-}
-
-populateRegularEvents();
 
 

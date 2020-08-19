@@ -21,6 +21,10 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
 b,
 strong {
   font-weight: bolder;
@@ -46,7 +50,15 @@ button {
 .primary-button--checked {
   color: var(--secondary-color);
   cursor: initial;
-  background: none;
+  background: transparent;
+  border: 2px var(--secondary-color) solid;
+}
+
+.modal__content button.secondary-button {
+  margin-top: 0.5rem;
+  color: var(--secondary-color);
+  cursor: initial;
+  background: transparent;
   border: 2px var(--secondary-color) solid;
 }
 
@@ -172,6 +184,14 @@ footer {
   padding: 1.5rem 0;
 }
 
+footer a{
+  color: var(--white-background);
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
 .breadcrumbs {
   display: flex;
   align-items: baseline;
@@ -191,10 +211,11 @@ footer {
 }
 
 .breadcrumbs__item + .breadcrumbs__item::before {
-  content: "❯";
+  content: "\203A";
   position: relative;
-  vertical-align: middle;
+  vertical-align: sub;
   margin: 0px 0.5rem;
+  font-size: 1.3rem;
 }
 
 /* ==========================================================================
@@ -221,6 +242,15 @@ h1 strong, .starred-event:first-child strong {
   font-weight: normal;
 }
 
+.starred-events .event:first-child .event__title {
+  color: var(--white-background);
+}
+
+.starred-events .event__title {
+  font-size: 2rem;
+  color: var(--text-color);
+}
+
 .starred-events {
   padding-bottom: 3rem;
 }
@@ -235,19 +265,19 @@ h1 strong, .starred-event:first-child strong {
     "secondary secondary";
 }
 
-.starred-event__media > * {
+.starred-events .event__media > * {
   margin: 12% 0;
 }
 
-.starred-event .starred-event__media {
+.starred-events .event__media {
   display: none;
 }
 
-.starred-event:first-child .starred-event__media {
+.starred-events .event:first-child .event__media {
   display: block;
 }
 
-.starred-event:first-child {
+.starred-events .event:first-child {
   background: linear-gradient(90deg, transparent 40%, var(--secondary-background-color) 0);
   display: flex;
   grid-area: starred;
@@ -256,69 +286,102 @@ h1 strong, .starred-event:first-child strong {
   top: -2rem;
 }
 
-.starred-event:first-child .starred-event__info {
+.starred-events .event:first-child button.primary-button--checked {
+  color: var(--white-background);
+  background: transparent;
+  border: 1px var(--white-background) solid;
+}
+
+.starred-events .event:first-child .event__info {
   box-sizing: border-box;
-  color: var(--background-color);
+  color: var(--white-background);
   padding: 3rem;
 }
 
-.starred-event__location {
+.starred-events .event__deadline {
+  display: none;
+}
+
+.starred-events .event__date {
+  text-transform: uppercase;
+}
+
+.starred-events .event__location {
+  position: absolute;
+  top: 1rem;
+  right: 0.5rem;
+}
+
+.starred-events .event:first-child .event__location {
+  top: 2.9rem;
+  right: 2rem;
+}
+
+.starred-events .event__location {
    float: right;
    color: var(--secondary-color);
  }
 
-.starred-event:first-child .starred-event__location {
+.starred-events .event:first-child .event__location {
   color: var(--tertiary-color);
 }
 
-.starred-event:first-child .starred-event__attendees {
+.starred-events .event:first-child .event__attendees {
   display: none;
 }
 
-.starred-event__options {
+.starred-events .event__options {
   display: flex;
   justify-content: space-between;
   padding: 1.5rem 0;
 }
 
-.starred-event:first-child .starred-event__options {
+.starred-events .event:first-child .event__options {
   justify-content: flex-end;
 }
 
-.starred-event__options button {
+.starred-events .event__options button {
   margin-left: 0.8rem;
 }
 
-.starred-event {
+.starred-events .event {
   background: var(--white-background);
   padding: 2rem;
 }
 
-.starred-event:first-child .primary-button {
+.starred-events .event:first-child .primary-button {
   display: block;
   background: var(--white-background);
 }
 
-.starred-event .primary-button {
+.starred-events .event .primary-button {
   color: var(--secondary-background-color);
   display: none;
 }
 
-.starred-event .secondary-button {
+.starred-events .event .secondary-button {
   color: var(--white-background);
   background: var(--secondary-color);
 }
 
-.starred-event:first-child .secondary-button {
+.starred-events .event:first-child .secondary-button {
   background: none;
 }
 
-.starred-event__date, .starred-event__attendees {
+.starred-events .event__date, .starred-events .event__attendees {
   font-weight: 500;
 }
 
-.starred-event strong {
+.starred-events .event:first-child strong {
+  color: var(--tertiary-color);
+}
+
+.starred-events .event strong {
   color: var(--secondary-color);
+}
+
+.starred-events .event__type {
+  display: none;
 }
 
 .regular-events {
@@ -329,6 +392,16 @@ h1 strong, .starred-event:first-child strong {
   display: grid;
   grid-template: auto / 1fr 1fr 1fr;
   gap: 2rem;
+}
+
+.regular-events .event__attendees, .regular-events .secondary-button {
+  display: none;
+}
+
+.regular-events .event__title {
+  font-size: 1rem;
+  color: var(--text-color);
+  font-family: Roboto, sans-serif;
 }
 
 .regular-events .event {
@@ -348,6 +421,10 @@ h1 strong, .starred-event:first-child strong {
 .event__info {
   padding: 1rem;
   position: relative;
+}
+
+.regular-events .event__description {
+  display: none;
 }
 
 .regular-events .event__type {
@@ -423,7 +500,7 @@ h1 strong, .starred-event:first-child strong {
   top: 6rem;
 }
 
-.event-details__options .event-details__date {
+.event-details__options .event-details__date-container {
   display: flex;
 }
 
@@ -512,6 +589,10 @@ h1 strong, .starred-event:first-child strong {
 
 .confirmation-modal .info-icon {
   color: var(--success-color);
+}
+
+.warning-modal .info-icon {
+  color: var(--warning-color);
 }
 
 .modal .info-icon {
